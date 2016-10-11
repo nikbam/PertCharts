@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <projectStartDate>17/06/2015</projectStartDate>
+    <activity>
+        <id>1</id>
+        <name>High level analysis</name>
+        <predecessors>-</predecessors>
+        <successors>2, 4</successors>
+        <startDate>17/06/2015</startDate>
+        <mostLikely>5</mostLikely>
+        <optimistic>5</optimistic>
+        <pessimistic>5</pessimistic>
+    </activity>
+    <activity>
+        <id>2</id>
+        <name>Selection of hardware platform</name>
+        <predecessors>1</predecessors>
+        <successors>3</successors>
+        <startDate>24/06/2015</startDate>
+        <mostLikely>1</mostLikely>
+        <optimistic>1</optimistic>
+        <pessimistic>1</pessimistic>
+    </activity>
+    <activity>
+        <id>3</id>
+        <name>Installation and commissioning of hardware</name>
+        <predecessors>2</predecessors>
+        <successors>10</successors>
+        <startDate>25/06/2015</startDate>
+        <mostLikely>10</mostLikely>
+        <optimistic>10</optimistic>
+        <pessimistic>10</pessimistic>
+    </activity>
+    <activity>
+        <id>4</id>
+        <name>Detailed analysis of core modules</name>
+        <predecessors>1</predecessors>
+        <successors>5, 6</successors>
+        <startDate>24/06/2015</startDate>
+        <mostLikely>10</mostLikely>
+        <optimistic>10</optimistic>
+        <pessimistic>10</pessimistic>
+    </activity>
+    <activity>
+        <id>5</id>
+        <name>Detailed analysis of supporting modules</name>
+        <predecessors>4</predecessors>
+        <successors>7, 11, 12</successors>
+        <startDate>08/07/2015</startDate>
+        <mostLikely>10</mostLikely>
+        <optimistic>10</optimistic>
+        <pessimistic>10</pessimistic>
+    </activity>
+    <activity>
+        <id>6</id>
+        <name>Programming of core modules</name>
+        <predecessors>4</predecessors>
+        <successors>8</successors>
+        <startDate>08/07/2015</startDate>
+        <mostLikely>10</mostLikely>
+        <optimistic>10</optimistic>
+        <pessimistic>10</pessimistic>
+    </activity>
+    <activity>
+        <id>7</id>
+        <name>Programming of supporting modules</name>
+        <predecessors>5</predecessors>
+        <successors>9</successors>
+        <startDate>22/07/2015</startDate>
+        <mostLikely>15</mostLikely>
+        <optimistic>15</optimistic>
+        <pessimistic>15</pessimistic>
+    </activity>
+    <activity>
+        <id>8</id>
+        <name>Quality assurance of core modules</name>
+        <predecessors>6</predecessors>
+        <successors>10</successors>
+        <startDate>22/07/2015</startDate>
+        <mostLikely>5</mostLikely>
+        <optimistic>5</optimistic>
+        <pessimistic>5</pessimistic>
+    </activity>
+    <activity>
+        <id>9</id>
+        <name>Quality assurance of supporting modules</name>
+        <predecessors>7</predecessors>
+        <successors>14</successors>
+        <startDate>12/08/2015</startDate>
+        <mostLikely>5</mostLikely>
+        <optimistic>5</optimistic>
+        <pessimistic>5</pessimistic>
+    </activity>
+    <activity>
+        <id>10</id>
+        <name>Core module training</name>
+        <predecessors>3, 8</predecessors>
+        <successors>14</successors>
+        <startDate>29/07/2015</startDate>
+        <mostLikely>1</mostLikely>
+        <optimistic>1</optimistic>
+        <pessimistic>1</pessimistic>
+    </activity>
+    <activity>
+        <id>11</id>
+        <name>Development and QA of accounting reporting</name>
+        <predecessors>5</predecessors>
+        <successors>14</successors>
+        <startDate>22/07/2015</startDate>
+        <mostLikely>5</mostLikely>
+        <optimistic>5</optimistic>
+        <pessimistic>5</pessimistic>
+    </activity>
+    <activity>
+        <id>12</id>
+        <name>Development and QA of management reporting</name>
+        <predecessors>5</predecessors>
+        <successors>13</successors>
+        <startDate>22/07/2015</startDate>
+        <mostLikely>5</mostLikely>
+        <optimistic>5</optimistic>
+        <pessimistic>5</pessimistic>
+    </activity>
+    <activity>
+        <id>13</id>
+        <name>Development of Management Information System</name>
+        <predecessors>12</predecessors>
+        <successors>14</successors>
+        <startDate>29/07/2015</startDate>
+        <mostLikely>5</mostLikely>
+        <optimistic>5</optimistic>
+        <pessimistic>5</pessimistic>
+    </activity>
+    <activity>
+        <id>14</id>
+        <name>Detailed training</name>
+        <predecessors>9, 10, 11, 13</predecessors>
+        <successors>-</successors>
+        <startDate>19/08/2015</startDate>
+        <mostLikely>5</mostLikely>
+        <optimistic>5</optimistic>
+        <pessimistic>5</pessimistic>
+    </activity>
+</project>

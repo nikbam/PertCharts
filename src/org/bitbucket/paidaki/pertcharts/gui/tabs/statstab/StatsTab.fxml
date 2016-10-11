@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.bitbucket.paidaki.pertcharts.gui.*?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.bitbucket.paidaki.pertcharts.gui.tabs.statstab.StatsTabController">
+    <center>
+        <HBox prefWidth="800.0">
+            <children>
+                <GridPane vgap="10.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+                        <ColumnConstraints halignment="CENTER"/>
+                        <ColumnConstraints/>
+                        <ColumnConstraints/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Activity Info" textFill="#5f8dcd" GridPane.columnSpan="2">
+                            <font>
+                                <Font name="System Bold" size="14.0"/>
+                            </font>
+                            <effect>
+                                <DropShadow color="GREY" offsetX="5.0" offsetY="5.0"/>
+                            </effect>
+                        </Label>
+                        <Label text="ID :" GridPane.rowIndex="1"/>
+                        <Label fx:id="idLabel" text="&lt;ID&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label text="Name :" GridPane.rowIndex="2"/>
+                        <Label fx:id="nameLabel" alignment="CENTER" prefWidth="200.0" text="&lt;Name&gt;"
+                               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <Label text="Description :" GridPane.rowIndex="3"/>
+                        <Label text="Dates" textFill="#5f8dcd" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                            <font>
+                                <Font name="System Bold" size="14.0"/>
+                            </font>
+                            <effect>
+                                <DropShadow color="GREY" offsetX="5.0" offsetY="5.0"/>
+                            </effect>
+                        </Label>
+                        <TextArea fx:id="descriptionTextArea" editable="false" prefWidth="200.0" wrapText="true"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        <Label text="Begin :" GridPane.rowIndex="5"/>
+                        <CustomDatePicker fx:id="beginDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                        <Label text="Finish :" GridPane.rowIndex="6"/>
+                        <CustomDatePicker fx:id="finishDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                        <Label text="Duration" textFill="#5f8dcd" GridPane.columnSpan="2" GridPane.rowIndex="8">
+                            <font>
+                                <Font name="System Bold" size="14.0"/>
+                            </font>
+                            <effect>
+                                <DropShadow color="GREY" offsetX="5.0" offsetY="5.0"/>
+                            </effect>
+                        </Label>
+                        <Label text="Optimistic Time :" GridPane.rowIndex="9"/>
+                        <Label text="Most Likely Time :" GridPane.rowIndex="10"/>
+                        <Label text="Pessimistic Time :" GridPane.rowIndex="11"/>
+                        <Label text="Expected Time :" GridPane.rowIndex="12"/>
+                        <Label fx:id="optimisticLabel" text="&lt;Optimistic&gt;" GridPane.columnIndex="1"
+                               GridPane.rowIndex="9"/>
+                        <Label fx:id="mostLikelyLabel" text="&lt;MostLikely&gt;" GridPane.columnIndex="1"
+                               GridPane.rowIndex="10"/>
+                        <Label fx:id="pessimisticLabel" text="&lt;Pessimistic&gt;" GridPane.columnIndex="1"
+                               GridPane.rowIndex="11"/>
+                        <Label fx:id="expectedLabel" text="&lt;Expected&gt;" GridPane.columnIndex="1"
+                               GridPane.rowIndex="12"/>
+                        <Label text="Duration :" GridPane.rowIndex="7"/>
+                        <Label fx:id="durationLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                    <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </HBox.margin>
+                </GridPane>
+                <Separator orientation="VERTICAL" prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                <GridPane vgap="10.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="110.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints valignment="CENTER" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Times" textFill="#5f8dcd" GridPane.columnSpan="3">
+                            <font>
+                                <Font name="System Bold" size="14.0"/>
+                            </font>
+                            <effect>
+                                <DropShadow color="GREY" offsetX="5.0" offsetY="5.0"/>
+                            </effect>
+                        </Label>
+                        <Label text="Earliest Start :" GridPane.rowIndex="1"/>
+                        <Label text="Latest Start :" GridPane.rowIndex="3"/>
+                        <Label text="Earliest Finish :" GridPane.rowIndex="2"/>
+                        <Label text="Latest Finish :" GridPane.rowIndex="4"/>
+                        <Label text="Slack :" GridPane.rowIndex="5"/>
+                        <CustomDatePicker fx:id="esDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                        <CustomDatePicker fx:id="lsDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                        <CustomDatePicker fx:id="efDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                        <CustomDatePicker fx:id="lfDatePicker" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+                        <Label fx:id="esLabel" text="&lt;ES&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label fx:id="lsLabel" text="&lt;LS&gt;" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        <Label fx:id="efLabel" text="&lt;EF&gt;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <Label fx:id="lfLabel" text="&lt;LF&gt;" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                        <Label fx:id="slackLabel" text="&lt;SL&gt;" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                        <Separator prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="6"/>
+                        <Label text="Project Statistics" textFill="#5f8dcd" GridPane.columnSpan="3"
+                               GridPane.rowIndex="7">
+                            <font>
+                                <Font name="System Bold" size="14.0"/>
+                            </font>
+                            <effect>
+                                <DropShadow color="GREY" offsetX="5.0" offsetY="5.0"/>
+                            </effect>
+                        </Label>
+                        <Label text="Critical Path :" GridPane.rowIndex="10"/>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1"
+                                    GridPane.columnSpan="2" GridPane.rowIndex="10" GridPane.rowSpan="3">
+                            <content>
+                                <ListView fx:id="cpsListView" prefHeight="100.0"/>
+                            </content>
+                        </ScrollPane>
+                        <Label layoutX="25.0" layoutY="413.0" text="Project Earliest Finish: " GridPane.rowIndex="8"/>
+                        <Label fx:id="pefLabel" layoutX="166.0" layoutY="236.0" text="&lt;PEF&gt; productive days"
+                               GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="8"/>
+                        <CustomDatePicker fx:id="ptotalDatePicker" layoutX="220.0" layoutY="232.0"
+                                          GridPane.columnIndex="2" GridPane.rowIndex="9"/>
+                        <Label layoutX="25.0" layoutY="388.0" text="Project Total Days:" GridPane.rowIndex="9"/>
+                        <Label fx:id="ptotalLabel" layoutX="241.0" layoutY="388.0" text="&lt;PTOTAL&gt;"
+                               GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+                    </children>
+                    <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </HBox.margin>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                    </padding>
+                </GridPane>
+            </children>
+        </HBox>
+    </center>
+</BorderPane>

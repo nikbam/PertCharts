@@ -1,0 +1,115 @@
+.text-field {
+    -fx-background-insets: 0, 2;
+}
+
+.text-field:focused {
+    -fx-background-color: #0093EF, #FFFFFF;
+}
+
+.text-field:hover {
+    -fx-background-color: #909090, #FFFFFF;
+}
+
+.text-field:focused:hover {
+    -fx-background-color: #0093EF, #FFFFFF;
+}
+
+.context-menu {
+    -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+}
+
+.mnemonic-underline {
+    -fx-stroke: -fx-text-base-color;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #395475;
+    -fx-font-weight: bold;
+}
+
+#canvas {
+    -fx-background-color: cornsilk;
+}
+
+.borderless {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.addActivity {
+    -fx-text-fill: #395475;
+}
+
+#logoBGPane {
+    -fx-background-image: url("../../resources/images/Logo_BG.png");
+}
+
+#logoLabel {
+    -fx-graphic: url("../../resources/images/Logo_Text.png");
+}
+
+#searchTextField {
+    -fx-background-image: url("../../resources/icons/Search_16x16.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+#cpsListView .list-cell {
+    -fx-alignment: center;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(#328BDB 0%, #207BCF 25%, #1973C9 75%, #0A65BF 100%);
+    -fx-text-fill: white;
+}
+
+.list-cell:even {
+    -fx-background-color: white;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #0093ff;
+    -fx-text-fill: white;
+}
+
+.cellBetweenDates {
+    -fx-background-color: cornsilk;
+}
+
+.cellBetweenDates:hover {
+    -fx-background-color: #0096C9;
+}
+
+.cellDisabled {
+    -fx-background-color: #ffc0cb;
+    -fx-text-fill: darkgray;
+}
+
+.date-picker:disabled, .date-picker:disabled > .text-field {
+    -fx-opacity: 0.85;
+}
+
+.table-row-cell {
+    -fx-cell-size: 30px;
+}
+
+.table-column {
+    -fx-alignment: center;
+}
+
+.selectedNode {
+    -fx-border-color: #5f8dcd;
+    -fx-border-width: 2;
+    -fx-border-style: dashed;
+}
+
+.criticalNode {
+    -fx-border-radius: 3;
+    -fx-border-color: red;
+    -fx-border-width: 3;
+}

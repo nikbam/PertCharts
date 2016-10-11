@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<MenuBar xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="org.bitbucket.paidaki.pertcharts.gui.menubar.MyMenuBarController">
+    <menus>
+        <Menu text="_File">
+            <items>
+                <MenuItem fx:id="newMenuItem" onAction="#newProject" text="_New Project">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <Menu fx:id="sampleMenu" mnemonicParsing="false" text="New from Sample"/>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="openMenuItem" onAction="#openProject" text="_Open...">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <Menu mnemonicParsing="false" text="Open Recent">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Open Recent"/>
+                    </items>
+                </Menu>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="saveMenuItem" onAction="#saveProject" text="_Save">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem onAction="#saveProjectAs" text="S_ave As...">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="DOWN" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <Menu fx:id="exportMenu" text="_Export">
+                    <items>
+                        <MenuItem fx:id="imageMenuItem" onAction="#exportChartToImage" text="Chart to _Image">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="I" control="UP" meta="UP" shift="DOWN"
+                                                    shortcut="DOWN"/>
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="pdfMenuItem" onAction="#exportChartToPdf" text="Chart to _PDF">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="P" control="UP" meta="UP" shift="DOWN"
+                                                    shortcut="DOWN"/>
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <MenuItem fx:id="preferencesMenuItem" onAction="#openPreferences" text="_Preferences...">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="exitMenuItem" onAction="#doExit" text="E_xit"/>
+            </items>
+        </Menu>
+        <Menu text="_Edit">
+            <items>
+                <MenuItem fx:id="undoMenuItem" onAction="#undo" text="_Undo">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="Z" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="redoMenuItem" onAction="#redo" text="_Redo">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="Y" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="cutMenuItem" onAction="#cut" text="Cu_t">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="copyMenuItem" onAction="#copy" text="_Copy">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="pasteMenuItem" onAction="#paste" text="Pa_ste">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="V" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="duplicateMenuItem" onAction="#duplicate" text="Dup_licate">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="deleteMenuItem" onAction="#delete" text="_Delete">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="searchMenuItem" text="_Search">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="F" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem onAction="#selectAll" text="Select _All">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem onAction="#deselect" text="D_eselect">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="DOWN" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+            </items>
+        </Menu>
+        <Menu text="_View">
+            <items>
+                <RadioMenuItem fx:id="pertRMenuItem" selected="true" text="_PERT Chart">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT1" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </RadioMenuItem>
+                <RadioMenuItem fx:id="ganttRMenuItem" text="_Gantt Chart">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT2" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </RadioMenuItem>
+                <RadioMenuItem fx:id="statsRMenuItem" text="_Statistics">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT3" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </RadioMenuItem>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <CheckMenuItem fx:id="toolboxCMenuItem" selected="true" text="_Toolbox">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="DIGIT4" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </CheckMenuItem>
+            </items>
+        </Menu>
+        <Menu text="_Activities">
+            <items>
+                <MenuItem fx:id="addMenuItem" onAction="#addActivity" text="_New Activity">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="T" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="removeMenuItem" onAction="#delete" text="_Remove Activity">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="clearActMenuItem" onAction="#clearActivities" text="C_lear Activities">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="UP" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="clearDepMenuItem" onAction="#clearDependencies" text="_Clear Dependencies">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="DOWN" shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="moveUpMenuItem" onAction="#moveActivityUp" text="Move _Up">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="OPEN_BRACKET" control="UP" meta="UP" shift="UP"
+                                            shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="moveDownMenuItem" onAction="#moveActivityDown" text="Move _Down">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="CLOSE_BRACKET" control="UP" meta="UP" shift="UP"
+                                            shortcut="DOWN"/>
+                    </accelerator>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="propertiesMenuItem" onAction="#activityProperties" text="Activity _Properties">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="ENTER" control="UP" meta="UP" shift="DOWN" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+            </items>
+        </Menu>
+        <Menu text="_Help">
+            <items>
+                <MenuItem fx:id="bitbucketMenuItem" onAction="#openBitbucket" text="View on _Bitbucket"/>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <MenuItem fx:id="aboutMenuItem" onAction="#openAbout" text="_About">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="F1" control="UP" meta="UP" shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+            </items>
+        </Menu>
+    </menus>
+</MenuBar>

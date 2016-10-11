@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.*?>
+<?import org.bitbucket.paidaki.pertcharts.gui.NumberTextField?>
+<BorderPane fx:id="container" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.bitbucket.paidaki.pertcharts.gui.tabs.pertcharttab.PertChartTabController">
+    <center>
+        <VBox spacing="5.0">
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </BorderPane.margin>
+            <children>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <children>
+                        <Label fx:id="criticalPathLabel" text="Critical Path :"/>
+                        <Line fx:id="criticalPathLine" endX="50.0" startX="-100.0" stroke="RED" strokeWidth="2.0"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Label layoutX="15.0" layoutY="15.0" text="Activity On :"/>
+                        <RadioButton accessibleRole="TOGGLE_BUTTON" mnemonicParsing="false" text="Arrow">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="tGroup"/>
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" selected="true" text="Node" toggleGroup="$tGroup"/>
+                        <Button fx:id="showToolboxButton" mnemonicParsing="false" text="&lt;&lt;" visible="false"/>
+                    </children>
+                </HBox>
+                <ScrollPane fx:id="canvasContainer" VBox.vgrow="ALWAYS">
+                    <content>
+                        <Pane fx:id="canvas"/>
+                    </content>
+                    <contextMenu>
+                        <ContextMenu>
+                            <items>
+                                <MenuItem fx:id="addMenuItem" onAction="#addActivity" text="_Add Activity">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="T" control="UP" meta="UP" shift="UP"
+                                                            shortcut="DOWN"/>
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem fx:id="deleteMenuItem" onAction="#delete" text="_Remove Activity">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="UP"
+                                                            shortcut="UP"/>
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem fx:id="clearChartMenuItem" onAction="#clearChart" text="C_lear All">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="UP"
+                                                            shortcut="DOWN"/>
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem fx:id="clearDepMenuItem" onAction="#clearDependencies"
+                                          text="_Clear Dependencies">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="DOWN"
+                                                            shortcut="DOWN"/>
+                                    </accelerator>
+                                </MenuItem>
+                                <SeparatorMenuItem mnemonicParsing="false"/>
+                                <MenuItem fx:id="autoArrangeMenuItem" onAction="#autoArrange"
+                                          text="Aut_o Arrange">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP"
+                                                            shortcut="DOWN"/>
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem fx:id="exportToImageMenuItem" onAction="#exportToImage"
+                                          text="_Export Chart to Image">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="I" control="UP" meta="UP" shift="UP"
+                                                            shortcut="DOWN"/>
+                                    </accelerator>
+                                </MenuItem>
+                                <SeparatorMenuItem mnemonicParsing="false"/>
+                                <MenuItem fx:id="propertiesMenuItem" onAction="#activityProperties"
+                                          text="Activity _Properties">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="ENTER" control="UP" meta="UP" shift="DOWN"
+                                                            shortcut="UP"/>
+                                    </accelerator>
+                                </MenuItem>
+                            </items>
+                        </ContextMenu>
+                    </contextMenu>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </center>
+    <right>
+        <VBox fx:id="toolboxContainer" alignment="TOP_CENTER" spacing="5.0">
+            <children>
+                <StackPane>
+                    <children>
+                        <Label text="Toolbox" textFill="#5f8dcd" StackPane.alignment="CENTER">
+                            <font>
+                                <Font name="System Bold" size="16.0"/>
+                            </font>
+                            <effect>
+                                <DropShadow color="GRAY" offsetX="5" offsetY="5">
+                                    <input>
+                                        <Reflection fraction="0.7" topOffset="-20"/>
+                                    </input>
+                                </DropShadow>
+                            </effect>
+                        </Label>
+                        <Button fx:id="hideToolboxButton" mnemonicParsing="false" text="&gt;&gt;"
+                                StackPane.alignment="CENTER_RIGHT"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </StackPane>
+                <ScrollPane fitToWidth="true" prefWidth="250.0" styleClass="borderless" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <TitledPane fx:id="shapeTPane" text="Shapes">
+                                    <content>
+                                        <GridPane vgap="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"
+                                                                   percentWidth="30.0"/>
+                                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"
+                                                                   percentWidth="70.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Arrow" GridPane.rowIndex="1"/>
+                                                <Label text="Node"/>
+                                                <Button fx:id="nodeTool" mnemonicParsing="false"
+                                                        GridPane.columnIndex="1"/>
+                                                <Button fx:id="arrowTool" mnemonicParsing="false"
+                                                        GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                                <Button fx:id="testTool" mnemonicParsing="false"
+                                                        GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                                <Label text="Test" GridPane.rowIndex="2"/>
+                                            </children>
+                                        </GridPane>
+                                    </content>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </TitledPane>
+                                <TitledPane fx:id="activityTPane" expanded="false" text="Activity Properties">
+                                    <content>
+                                        <GridPane vgap="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"
+                                                                   percentWidth="30.0"/>
+                                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"
+                                                                   percentWidth="70.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Tet2" GridPane.rowIndex="1"/>
+                                                <Label text="Test1"/>
+                                                <Label text="Test3" GridPane.rowIndex="2"/>
+                                                <TextField GridPane.columnIndex="1"/>
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                            </children>
+                                        </GridPane>
+                                    </content>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </TitledPane>
+                                <TitledPane fx:id="nodeTPane" expanded="false" text="Node">
+                                    <content>
+                                        <GridPane vgap="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"
+                                                                   percentWidth="30.0"/>
+                                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"
+                                                                   percentWidth="70.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Tet2" GridPane.rowIndex="1"/>
+                                                <Label text="Test1"/>
+                                                <Label text="Test3" GridPane.rowIndex="2"/>
+                                                <TextField GridPane.columnIndex="1"/>
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                            </children>
+                                        </GridPane>
+                                    </content>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </TitledPane>
+                                <TitledPane fx:id="arrowTPane" expanded="false" text="Arrow">
+                                    <content>
+                                        <GridPane vgap="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"
+                                                                   percentWidth="30.0"/>
+                                                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES"
+                                                                   percentWidth="70.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Tet2" GridPane.rowIndex="1"/>
+                                                <Label text="Test1"/>
+                                                <Label text="Test3" GridPane.rowIndex="2"/>
+                                                <TextField fx:id="test" GridPane.columnIndex="1"/>
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                                <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                            </children>
+                                        </GridPane>
+                                    </content>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </TitledPane>
+                                <TitledPane fx:id="canvasTPane" text="Canvas">
+                                    <content>
+                                        <GridPane vgap="10.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"
+                                                                   percentWidth="40.0"/>
+                                                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS"
+                                                                   percentWidth="60.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                                <RowConstraints valignment="CENTER" vgrow="ALWAYS"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <Label text="Height" GridPane.rowIndex="1"/>
+                                                <Label text="Width"/>
+                                                <Label text="Color" GridPane.rowIndex="2"/>
+                                                <NumberTextField fx:id="canvasWidthTField" GridPane.columnIndex="1"/>
+                                                <NumberTextField fx:id="canvasHeightTField" GridPane.columnIndex="1"
+                                                                 GridPane.rowIndex="1"/>
+                                                <ColorPicker fx:id="colorPicker" prefWidth="200.0"
+                                                             GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                                <Label text="Auto Arrange" GridPane.rowIndex="3"/>
+                                                <CheckBox fx:id="autoArrangeCheckBox" mnemonicParsing="false"
+                                                          selected="true" GridPane.columnIndex="1"
+                                                          GridPane.rowIndex="3"/>
+                                            </children>
+                                        </GridPane>
+                                    </content>
+                                    <font>
+                                        <Font name="System Bold" size="12.0"/>
+                                    </font>
+                                </TitledPane>
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="5.0" right="5.0" top="5.0"/>
+            </BorderPane.margin>
+        </VBox>
+    </right>
+</BorderPane>

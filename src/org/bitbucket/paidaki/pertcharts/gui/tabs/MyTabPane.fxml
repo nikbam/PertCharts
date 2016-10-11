@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<TabPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="org.bitbucket.paidaki.pertcharts.gui.tabs.MyTabPaneController" fx:id="tabPane" minWidth="300.0"
+         tabClosingPolicy="UNAVAILABLE">
+    <tabs>
+        <Tab fx:id="pertTab" closable="false" text="PERT Chart">
+            <content>
+                <fx:include source="pertcharttab/PertChartTab.fxml" fx:id="pertChartTab"/>
+            </content>
+        </Tab>
+        <Tab fx:id="ganttTab" disable="true" text="Gantt Chart">
+            <content>
+                <fx:include source="ganttcharttab/GanttChartTab.fxml" fx:id="ganntChartTab"/>
+            </content>
+        </Tab>
+        <Tab fx:id="statsTab" text="Statistics">
+            <content>
+                <fx:include source="statstab/StatsTab.fxml" fx:id="statisticsTab"/>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

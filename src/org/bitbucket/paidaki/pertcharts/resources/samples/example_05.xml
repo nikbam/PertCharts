@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <projectStartDate>16/06/2015</projectStartDate>
+    <activity>
+        <id>1</id>
+        <name>New_Activity</name>
+        <predecessors>4</predecessors>
+        <successors>-</successors>
+        <startDate>01/07/2015</startDate>
+        <mostLikely>3</mostLikely>
+        <optimistic>3</optimistic>
+        <pessimistic>3</pessimistic>
+    </activity>
+    <activity>
+        <id>2</id>
+        <name>New_Activity</name>
+        <predecessors>4, 5, 6</predecessors>
+        <successors>-</successors>
+        <startDate>01/07/2015</startDate>
+        <mostLikely>2</mostLikely>
+        <optimistic>2</optimistic>
+        <pessimistic>2</pessimistic>
+    </activity>
+    <activity>
+        <id>3</id>
+        <name>New_Activity</name>
+        <predecessors>9</predecessors>
+        <successors>-</successors>
+        <startDate>23/06/2015</startDate>
+        <mostLikely>7</mostLikely>
+        <optimistic>7</optimistic>
+        <pessimistic>7</pessimistic>
+    </activity>
+    <activity>
+        <id>4</id>
+        <name>New_Activity</name>
+        <predecessors>7</predecessors>
+        <successors>2, 1</successors>
+        <startDate>25/06/2015</startDate>
+        <mostLikely>4</mostLikely>
+        <optimistic>4</optimistic>
+        <pessimistic>4</pessimistic>
+    </activity>
+    <activity>
+        <id>5</id>
+        <name>New_Activity</name>
+        <predecessors>7, 8</predecessors>
+        <successors>2</successors>
+        <startDate>25/06/2015</startDate>
+        <mostLikely>3</mostLikely>
+        <optimistic>3</optimistic>
+        <pessimistic>3</pessimistic>
+    </activity>
+    <activity>
+        <id>6</id>
+        <name>New_Activity</name>
+        <predecessors>9</predecessors>
+        <successors>2</successors>
+        <startDate>23/06/2015</startDate>
+        <mostLikely>6</mostLikely>
+        <optimistic>6</optimistic>
+        <pessimistic>6</pessimistic>
+    </activity>
+    <activity>
+        <id>7</id>
+        <name>New_Activity</name>
+        <predecessors>10</predecessors>
+        <successors>5, 4</successors>
+        <startDate>18/06/2015</startDate>
+        <mostLikely>5</mostLikely>
+        <optimistic>5</optimistic>
+        <pessimistic>5</pessimistic>
+    </activity>
+    <activity>
+        <id>8</id>
+        <name>New_Activity</name>
+        <predecessors>10</predecessors>
+        <successors>5</successors>
+        <startDate>18/06/2015</startDate>
+        <mostLikely>4</mostLikely>
+        <optimistic>4</optimistic>
+        <pessimistic>4</pessimistic>
+    </activity>
+    <activity>
+        <id>9</id>
+        <name>New_Activity</name>
+        <predecessors>10</predecessors>
+        <successors>6, 3</successors>
+        <startDate>18/06/2015</startDate>
+        <mostLikely>3</mostLikely>
+        <optimistic>3</optimistic>
+        <pessimistic>3</pessimistic>
+    </activity>
+    <activity>
+        <id>10</id>
+        <name>New_Activity</name>
+        <predecessors>-</predecessors>
+        <successors>9, 8, 7</successors>
+        <startDate>16/06/2015</startDate>
+        <mostLikely>2</mostLikely>
+        <optimistic>2</optimistic>
+        <pessimistic>2</pessimistic>
+    </activity>
+</project>

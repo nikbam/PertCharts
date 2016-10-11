@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.*?>
+<VBox prefHeight="755.0" prefWidth="1284.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.bitbucket.paidaki.pertcharts.gui.MainWindowController">
+    <children>
+        <fx:include fx:id="menuBar" source="menubar/MyMenuBar.fxml"/>
+        <fx:include fx:id="buttonBar" source="toolbar/MyButtonBar.fxml"/>
+        <SplitPane dividerPositions="0.3" VBox.vgrow="ALWAYS">
+            <items>
+                <VBox minWidth="200.0">
+                    <children>
+                        <StackPane fx:id="logoBGPane" minHeight="90.0">
+                            <children>
+                                <Label fx:id="logoLabel"/>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </VBox.margin>
+                        </StackPane>
+                        <fx:include fx:id="tableView" source="table/MyTableView.fxml" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+                <fx:include fx:id="tabPane" source="tabs/MyTabPane.fxml"/>
+            </items>
+        </SplitPane>
+        <HBox>
+            <children>
+                <Label fx:id="statusLabel" text="All done"/>
+            </children>
+            <VBox.margin>
+                <Insets left="5.0"/>
+            </VBox.margin>
+        </HBox>
+    </children>
+</VBox>

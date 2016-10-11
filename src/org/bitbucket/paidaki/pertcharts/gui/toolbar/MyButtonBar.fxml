@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import org.bitbucket.paidaki.pertcharts.gui.CustomDatePicker?>
+<HBox alignment="CENTER_LEFT" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.bitbucket.paidaki.pertcharts.gui.toolbar.MyButtonBarController">
+    <children>
+        <Button fx:id="newButton" mnemonicParsing="false" onAction="#newProject"/>
+        <Button fx:id="openButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#openProject"/>
+        <Button fx:id="saveButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#saveProject"/>
+        <Button fx:id="preferencesButton" layoutX="31.0" layoutY="10.0" mnemonicParsing="false"
+                onAction="#openPreferences"/>
+        <Separator orientation="VERTICAL">
+            <HBox.margin>
+                <Insets left="10.0" right="10.0"/>
+            </HBox.margin>
+        </Separator>
+        <Button fx:id="cutButton" disable="true" layoutX="10.0" layoutY="98.0" mnemonicParsing="false" onAction="#cut"/>
+        <Button fx:id="copyButton" disable="true" layoutX="31.0" layoutY="98.0" mnemonicParsing="false"
+                onAction="#copy"/>
+        <Button fx:id="pasteButton" disable="true" layoutX="52.0" layoutY="98.0" mnemonicParsing="false"
+                onAction="#paste"/>
+        <Button fx:id="undoButton" disable="true" layoutX="1268.0" layoutY="10.0" mnemonicParsing="false"
+                onAction="#undo"/>
+        <Button fx:id="redoButton" disable="true" layoutX="136.0" layoutY="10.0" mnemonicParsing="false"
+                onAction="#redo"/>
+        <Separator orientation="VERTICAL">
+            <HBox.margin>
+                <Insets left="10.0" right="10.0"/>
+            </HBox.margin>
+        </Separator>
+        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addActivity"/>
+        <Button fx:id="deleteButton" disable="true" mnemonicParsing="false" onAction="#delete"/>
+        <Button fx:id="moveUpButton" disable="true" mnemonicParsing="false" onAction="#moveActivityUp"/>
+        <Button fx:id="moveDownButton" disable="true" mnemonicParsing="false" onAction="#moveActivityDown"/>
+        <Button fx:id="propertiesButton" disable="true" mnemonicParsing="false" onAction="#activityProperties"/>
+        <Region nodeOrientation="LEFT_TO_RIGHT" HBox.hgrow="ALWAYS"/>
+        <Label text="Project Starts :">
+            <font>
+                <Font name="System Italic" size="14.0"/>
+            </font>
+        </Label>
+        <CustomDatePicker fx:id="projectStartDatePicker" prefWidth="150.0"/>
+        <Separator layoutX="240.0" layoutY="10.0" orientation="VERTICAL"/>
+        <TextField fx:id="searchTextField" prefWidth="200.0" promptText="Quick Search">
+            <font>
+                <Font name="System Italic" size="12.0"/>
+            </font>
+        </TextField>
+    </children>
+    <VBox.margin>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+    </VBox.margin>
+</HBox>
