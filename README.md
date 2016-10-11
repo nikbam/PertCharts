@@ -11,7 +11,7 @@ PertCharts is a statistical tool for Project Management, which analyzes and repr
 
 ## Screenshots
 
-![pert-main](https://cloud.githubusercontent.com/assets/22759513/19273272/8eb25fb8-8fd4-11e6-893d-92eb8565bc01.png)
+![pert-main](https://cloud.githubusercontent.com/assets/22759513/19274038/7b1c6dc4-8fd7-11e6-8fd7-d772fddbc390.png)
 
 ![pert-project](https://cloud.githubusercontent.com/assets/22759513/19273270/8e7e9340-8fd4-11e6-8a83-e6903fb3cbdc.png)
 
