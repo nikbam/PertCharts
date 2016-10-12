@@ -19,7 +19,7 @@ PertCharts is a statistical tool for Project Management, which analyzes and repr
 
 ## Authors
 
-* **Nikos Bampamis** - [Nik-Bam](https://github.com/Nik-Bam)
+* **Nikos Bampamis** - [nikbam](https://github.com/nikbam)
 
 ## Acknowledgments
    
